@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/SyncChannel/v10/Types" xmlns:bons1="http://bip.bee.kz/common/v10/Types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://bip.bee.kz/common/v10/Types" schemaLocation="../../../common/v10/Types/SenderInfo.xsd"/>
+    <xsd:import namespace="http://bip.bee.kz/common/v10/Types" schemaLocation="../../../common/v10/Types/Property.xsd"/>
+    <xsd:import namespace="http://bip.bee.kz/common/v10/Types" schemaLocation="../../../common/v10/Types/Guid.xsd"/>
+	<xsd:complexType name="SyncMessageInfo">
+		<xsd:sequence>
+
+			<xsd:element minOccurs="1" name="messageId" type="xsd:string">
+				<xsd:annotation>
+          
+        <xsd:documentation>Идентификатор сообщения в системе отправителя (заполняется системой отправителя)</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="correlationId" type="xsd:string">
+				<xsd:annotation>
+          
+        <xsd:documentation>Идентификатор цепочки сообщения в системе отправителя (если сообщения существует в рамках цепочки сообщений, заполнятеся системой отправителя)</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="serviceId" type="xsd:string">
+				<xsd:annotation>
+          
+        <xsd:documentation>Идентификатор взаимодействия, по реестру взаимодействий ШЭП</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="messageDate" type="xsd:dateTime">
+				<xsd:annotation>
+          
+        <xsd:documentation>Дата создания сообщения в системе отправителя (заполняется отправителем)</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+
+			<xsd:element minOccurs="0" name="routeId" type="xsd:string">
+				<xsd:annotation>
+          
+        <xsd:documentation>Идентификатор маршурута сообщения (если есть необходимость в дополнительной маршрутизации, идентификатор по реестру, заполняется системой отправителя)</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="sender" type="bons1:SenderInfo">
+				<xsd:annotation>
+          <xsd:documentation>Объест информация об отправителе (заполняется отправителем)</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="properties" type="bons1:Property">
+				<xsd:annotation>
+          <xsd:documentation>Массив своиств, можно добавить дополнительные своиства запроса (по согласовнию с ШЭП и системой получателя)</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="sessionId" type="bons1:guid">
+				<xsd:annotation>
+          <xsd:documentation>Идентификатор сессии ШЭП. Заполняется на ШЭП, отправителю заполнять не надо. </xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

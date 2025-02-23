@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/common/v10/Types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:complexType name="MessageData">
+		<xsd:annotation>
+      <xsd:documentation>Структура для передачи бизнес данных сообщения</xsd:documentation>
+    </xsd:annotation>
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="data" type="xsd:anyType">
+				<xsd:annotation>
+          
+        <xsd:documentation>Объект бизнес данные сообщения (формат определяется системой получателя сообщения)</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

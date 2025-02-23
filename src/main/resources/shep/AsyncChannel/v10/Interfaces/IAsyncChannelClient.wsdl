@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="IAsyncChannelClient" targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client" xmlns:tns="http://bip.bee.kz/AsyncChannel/v10/Types/Client" xmlns:tns0="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client" xmlns:tns1="http://bip.bee.kz/AsyncChannel/v10/Types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client">
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/Types/Client" schemaLocation="../Types/IAsyncChannelClient.xsd"/>   
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/Types" schemaLocation="../Types/IAsyncChannel.xsd"/>          
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="sendMessageRequestMsg">
+    <wsdl:part element="tns1:sendMessage" name="sendMessageParameters"/>
+  </wsdl:message>
+    <wsdl:message name="sendMessageResponseMsg">
+    <wsdl:part element="tns1:sendMessageResponse" name="sendMessageResult"/>
+  </wsdl:message>
+    <wsdl:message name="sendMessage_sendMessageFaultMsg">
+    <wsdl:part element="tns1:sendMessageFault1_sendMessageFault" name="sendMessageFault"/>
+  </wsdl:message>
+    <wsdl:message name="changeMassageStatusNotificationRequestMsg">
+    <wsdl:part element="tns:changeMassageStatusNotification" name="changeMassageStatusNotificationParameters"/>
+  </wsdl:message>
+    <wsdl:message name="changeMassageStatusNotificationResponseMsg">
+    <wsdl:part element="tns:changeMassageStatusNotificationResponse" name="changeMassageStatusNotificationResult"/>
+  </wsdl:message>
+    <wsdl:message name="changeMassageStatusNotification_changeMassageStatusNotificationFaultMsg">
+    <wsdl:part element="tns:changeMassageStatusNotificationFault1_changeMassageStatusNotificationFault" name="changeMassageStatusNotificationFault"/>
+  </wsdl:message>
+    <wsdl:portType name="IAsyncChannelClient">
+    <wsdl:documentation>Интерфейс для реализации сервиса на стороне клиентов ШЭП для работы с асинхронным каналом.&#13;
+Сервис реализуется как на стороне провайдера сервиса, так и на стороне использующей сервис, в случае если во взаимодействии требуется что бы ШЭП доставлял сообщения методом вызова сервиса получателя сообщения (PUSH)</wsdl:documentation>
+    <wsdl:operation name="sendMessage">
+      <wsdl:documentation>Метод приема сообщений&#13;
+</wsdl:documentation>
+      <wsdl:input message="tns0:sendMessageRequestMsg" name="sendMessageRequest"/>
+      <wsdl:output message="tns0:sendMessageResponseMsg" name="sendMessageResponse"/>
+      <wsdl:fault message="tns0:sendMessage_sendMessageFaultMsg" name="sendMessageFault">
+        <wsdl:documentation>Объект ошибки при обработке запроса&#13;
+</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeMassageStatusNotification">
+      <wsdl:documentation>Метод приема уведомлений об изменении статуса сообщения в ШЭП</wsdl:documentation>
+      <wsdl:input message="tns0:changeMassageStatusNotificationRequestMsg" name="changeMassageStatusNotificationRequest"/>
+      <wsdl:output message="tns0:changeMassageStatusNotificationResponseMsg" name="changeMassageStatusNotificationResponse"/>
+      <wsdl:fault message="tns0:changeMassageStatusNotification_changeMassageStatusNotificationFaultMsg" name="changeMassageStatusNotificationFault">
+        <wsdl:documentation>Объект ошибки при обработке запроса</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

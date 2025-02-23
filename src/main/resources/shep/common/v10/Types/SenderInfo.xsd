@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/common/v10/Types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:complexType name="SenderInfo">
+		<xsd:annotation>
+      <xsd:documentation>Структура данных информации об отправителе</xsd:documentation>
+    </xsd:annotation>
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="senderId" type="xsd:string">
+				<xsd:annotation>
+          <xsd:documentation>Идентификатор отправителя (системы отправителя)</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="password" type="xsd:string">
+				<xsd:annotation>
+          <xsd:documentation>Пароль отправителя</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

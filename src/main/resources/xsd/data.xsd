@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://shep.nitec.kz/"
+           elementFormDefault="unqualified"
+           targetNamespace="http://shep.nitec.kz/"
+           version="1.0">
+    <xs:element name="request" type="tns:Request"/>
+    <xs:element name="response" type="tns:Response"/>
+    <xs:complexType name="Request">
+        <xs:sequence>
+            <xs:element name="requestNumber" type="xs:string"/>
+            <xs:element name="uin" type="xs:string"/>
+            <xs:element name="date" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Response">
+        <xs:sequence>
+            <xs:element name="requestNumber" type="xs:string"/>
+            <xs:element name="status" type="tns:Status"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Status">
+        <xs:sequence>
+            <xs:element name="code" type="xs:string"/>
+            <xs:element name="messageRu" type="xs:string"/>
+            <xs:element name="messageKz" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

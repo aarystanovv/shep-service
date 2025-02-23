@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/common/v10/Types" xmlns:bons1="http://bip.bee.kz/common/v10/Types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="ErrorInfo.xsd"/>
+    <xsd:complexType name="DeliveryStatusInfo">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="receiveStatus">
+				<xsd:annotation>
+          <xsd:documentation>Стаус доставки сообщения:
+MESSAGE_NOT_ACCTEPTED - сообщения не принято
+MESSAGE_ACCEPTED - сообщения принято</xsd:documentation>
+        </xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="MESSAGE_ACCEPTED"/>
+						<xsd:enumeration value="MESSAGE_NOT_ACCTEPTED">
+						</xsd:enumeration>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="statusDate" type="xsd:dateTime">
+			</xsd:element>
+			<xsd:element minOccurs="1" name="resendMessage">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="RESEND"/>
+						<xsd:enumeration value="NOT_RESEND"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="error" type="bons1:ErrorInfo">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

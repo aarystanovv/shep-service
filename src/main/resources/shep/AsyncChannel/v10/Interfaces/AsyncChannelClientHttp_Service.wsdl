@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="AsyncChannelClientHttp_Service" targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client/Binding" xmlns:Port_0="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client/Binding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import location="IAsyncChannelClient.wsdl" namespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client"/>
+  <wsdl:binding name="AsyncChannelClientHttpBinding" type="Port_0:IAsyncChannelClient">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendMessage">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="sendMessageRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="sendMessageFault">
+        <soap:fault name="sendMessageFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeMassageStatusNotification">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="changeMassageStatusNotificationRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeMassageStatusNotificationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="changeMassageStatusNotificationFault">
+        <soap:fault name="changeMassageStatusNotificationFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AsyncChannelClientHttpService">
+    <wsdl:port binding="this:AsyncChannelClientHttpBinding" name="AsyncChannelClientHttpPort">
+      <soap:address location="http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelClientService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

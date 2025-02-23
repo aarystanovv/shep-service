@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" xmlns:bons1="http://bip.bee.kz/common/v10/Types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:import namespace="http://bip.bee.kz/common/v10/Types" schemaLocation="../../../common/v10/Types/Guid.xsd"/>
+
+	<xsd:complexType name="AsyncSendMessageResponse">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="messageId" type="xsd:string">
+				<xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="correlationId" type="xsd:string">
+				<xsd:annotation>
+          <xsd:documentation>Идентификато цепочки сообщения</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+				<xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="sessionId" type="bons1:guid">
+				<xsd:annotation>
+          <xsd:documentation>Идентификатор сессии ШЭП</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

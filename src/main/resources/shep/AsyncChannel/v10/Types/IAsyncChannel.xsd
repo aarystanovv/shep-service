@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Types" xmlns:bons0="http://bip.bee.kz/common/v10/Types" xmlns:bons3="http://bip.bee.kz/AsyncChannel/v10/ITypes" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://bip.bee.kz/common/v10/Types" schemaLocation="../../../common/v10/Types/ErrorInfo.xsd"/>
+    <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncSendMessageResponse.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncSendMessageRequest.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncSendDeliveryNotificationResponse.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncSendDeliveryNotificationRequest.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncGetMessageStatusResponse.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncGetMessageStatusRequest.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncGetMessagesResponse.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncGetMessagesRequest.xsd"/>
+      <xsd:element name="sendMessage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" nillable="true" type="bons3:AsyncSendMessageRequest">
+              <xsd:annotation>
+                <xsd:documentation>Запрос</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendMessageResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="bons3:AsyncSendMessageResponse">
+              <xsd:annotation>
+                <xsd:documentation>Ответ</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendDeliveryNotification">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" nillable="true" type="bons3:AsyncSendDeliveryNotificationRequest">
+              <xsd:annotation>
+                <xsd:documentation>Запрос</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendDeliveryNotificationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="bons3:AsyncSendDeliveryNotificationResponse">
+              <xsd:annotation>
+                <xsd:documentation>Ответ</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMessageStatus">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" nillable="true" type="bons3:AsyncGetMessageStatusRequest">
+              <xsd:annotation>
+                <xsd:documentation>Запрос</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMessageStatusResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="bons3:AsyncGetMessageStatusResponse">
+              <xsd:annotation>
+                <xsd:documentation>Ответ</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendMessageFault1_sendMessageFault" nillable="true" type="bons0:ErrorInfo"/>
+      <xsd:element name="sendDeliveryNotificationFault1_sendDeliveryNotificationFault" nillable="true" type="bons0:ErrorInfo"/>
+      <xsd:element name="getMessageStatusFault1_getMessageStatusFault" nillable="true" type="bons0:ErrorInfo"/>
+      <xsd:element name="getMessages">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" nillable="true" type="bons3:AsyncGetMessagesRequest">
+              <xsd:annotation>
+                <xsd:documentation>Запрос</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMessagesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="bons3:AsyncGetMessagesResponse">
+              <xsd:annotation>
+                <xsd:documentation>Ответ</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getMessagesFault1_getMessagesFault" nillable="true" type="bons0:ErrorInfo"/>
+    </xsd:schema>

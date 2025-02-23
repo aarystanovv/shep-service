@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Types/Client" xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/ITypes" xmlns:bons1="http://bip.bee.kz/common/v10/Types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://bip.bee.kz/common/v10/Types" schemaLocation="../../../common/v10/Types/ErrorInfo.xsd"/>
+    <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncSendMessageResponse.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncSendMessageRequest.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncChangeStatusNotifyResponse.xsd"/>
+            <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/ITypes" schemaLocation="AsyncChangeStatusNotifyRequest.xsd"/>
+      <xsd:element name="sendMessage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" nillable="true" type="bons0:AsyncSendMessageRequest">
+              <xsd:annotation>
+                <xsd:documentation>Объект запроса</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendMessageResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="bons0:AsyncSendMessageResponse">
+              <xsd:annotation>
+                <xsd:documentation>Объект ответа</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="sendMessageFault1_sendMessageFault" nillable="true" type="bons1:ErrorInfo"/>
+      <xsd:element name="changeMassageStatusNotification">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" nillable="true" type="bons0:AsyncChangeStatusNotifyRequest">
+              <xsd:annotation>
+                <xsd:documentation>Объект запроса</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="changeMassageStatusNotificationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="response" nillable="true" type="bons0:AsyncChangeStatusNotifyResponse">
+              <xsd:annotation>
+                <xsd:documentation>Объект ответа</xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="changeMassageStatusNotificationFault1_changeMassageStatusNotificationFault" nillable="true" type="bons1:ErrorInfo"/>
+    </xsd:schema>

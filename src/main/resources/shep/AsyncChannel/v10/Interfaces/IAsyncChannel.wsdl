@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="IAsyncChannel_N" targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces" xmlns:tns="http://bip.bee.kz/AsyncChannel/v10/Types" xmlns:tns0="http://bip.bee.kz/AsyncChannel/v10/Interfaces" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces">
+        <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/Types" schemaLocation="../Types/IAsyncChannel.xsd"/>    
+    </xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="sendMessageRequestMsg">
+    <wsdl:part element="tns:sendMessage" name="sendMessageParameters"/>
+  </wsdl:message>
+    <wsdl:message name="sendMessageResponseMsg">
+    <wsdl:part element="tns:sendMessageResponse" name="sendMessageResult"/>
+  </wsdl:message>
+    <wsdl:message name="sendDeliveryNotificationRequestMsg">
+    <wsdl:part element="tns:sendDeliveryNotification" name="sendDeliveryNotificationParameters"/>
+  </wsdl:message>
+    <wsdl:message name="sendDeliveryNotificationResponseMsg">
+    <wsdl:part element="tns:sendDeliveryNotificationResponse" name="sendDeliveryNotificationResult"/>
+  </wsdl:message>
+    <wsdl:message name="getMessageStatusRequestMsg">
+    <wsdl:part element="tns:getMessageStatus" name="getMessageStatusParameters"/>
+  </wsdl:message>
+    <wsdl:message name="getMessageStatusResponseMsg">
+    <wsdl:part element="tns:getMessageStatusResponse" name="getMessageStatusResult"/>
+  </wsdl:message>
+    <wsdl:message name="sendMessage_sendMessageFaultMsg">
+    <wsdl:part element="tns:sendMessageFault1_sendMessageFault" name="sendMessageFault"/>
+  </wsdl:message>
+    <wsdl:message name="sendDeliveryNotification_sendDeliveryNotificationFaultMsg">
+    <wsdl:part element="tns:sendDeliveryNotificationFault1_sendDeliveryNotificationFault" name="sendDeliveryNotificationFault"/>
+  </wsdl:message>
+    <wsdl:message name="getMessageStatus_getMessageStatusFaultMsg">
+    <wsdl:part element="tns:getMessageStatusFault1_getMessageStatusFault" name="getMessageStatusFault"/>
+  </wsdl:message>
+    <wsdl:message name="getMessagesRequestMsg">
+    <wsdl:part element="tns:getMessages" name="getMessagesParameters"/>
+  </wsdl:message>
+    <wsdl:message name="getMessagesResponseMsg">
+    <wsdl:part element="tns:getMessagesResponse" name="getMessagesResult"/>
+  </wsdl:message>
+    <wsdl:message name="getMessages_getMessagesFaultMsg">
+    <wsdl:part element="tns:getMessagesFault1_getMessagesFault" name="getMessagesFault"/>
+  </wsdl:message>
+    <wsdl:portType name="IAsyncChannel">
+    <wsdl:documentation>Интерфейс сервиса на ШЭП, для работы с асинхронным каналом</wsdl:documentation>
+    <wsdl:operation name="sendMessage">
+      <wsdl:documentation>Метод для отправки сообщений на асинхронный канал ШЭП</wsdl:documentation>
+      <wsdl:input message="tns0:sendMessageRequestMsg" name="sendMessageRequest"/>
+      <wsdl:output message="tns0:sendMessageResponseMsg" name="sendMessageResponse"/>
+      <wsdl:fault message="tns0:sendMessage_sendMessageFaultMsg" name="sendMessageFault">
+        <wsdl:documentation>Ошибка</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="sendDeliveryNotification">
+      <wsdl:documentation>Метод отправки уведомления на ШЭП о доставке или не доставке сообщения н</wsdl:documentation>
+      <wsdl:input message="tns0:sendDeliveryNotificationRequestMsg" name="sendDeliveryNotificationRequest"/>
+      <wsdl:output message="tns0:sendDeliveryNotificationResponseMsg" name="sendDeliveryNotificationResponse"/>
+      <wsdl:fault message="tns0:sendDeliveryNotification_sendDeliveryNotificationFaultMsg" name="sendDeliveryNotificationFault">
+        <wsdl:documentation>Ошибка</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageStatus">
+      <wsdl:documentation>Метод получения статуса сообщения с ШЭП</wsdl:documentation>
+      <wsdl:input message="tns0:getMessageStatusRequestMsg" name="getMessageStatusRequest"/>
+      <wsdl:output message="tns0:getMessageStatusResponseMsg" name="getMessageStatusResponse"/>
+      <wsdl:fault message="tns0:getMessageStatus_getMessageStatusFaultMsg" name="getMessageStatusFault">
+        <wsdl:documentation>Ошибка</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessages">
+      <wsdl:documentation>Метод выборки сообщений с ШЭП по следующим параметрам:&#13;
+-идентификатору сообщения+получателю(только для запрасившего)+идентификатору сервиса&#13;
+-идентификатору цепочки сообщений+получателю(только для запрасившего)+идентификатору сервиса&#13;
+-получателю(только для запрасившего)+идентификатору сервиса</wsdl:documentation>
+      <wsdl:input message="tns0:getMessagesRequestMsg" name="getMessagesRequest"/>
+      <wsdl:output message="tns0:getMessagesResponseMsg" name="getMessagesResponse"/>
+      <wsdl:fault message="tns0:getMessages_getMessagesFaultMsg" name="getMessagesFault">
+        <wsdl:documentation>ошибка</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

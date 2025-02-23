@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/common/v10/Types" xmlns:bons1="http://bip.bee.kz/common/v10/Types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:complexType name="StatusInfo">
+		<xsd:annotation>
+      <xsd:documentation>Статус</xsd:documentation>
+    </xsd:annotation>
+		<xsd:sequence>
+
+			<xsd:element minOccurs="1" name="code" type="xsd:string">
+				<xsd:annotation>
+          
+        <xsd:documentation>Код статуса (простовляется системой получателя запроса)</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="message">
+				<xsd:annotation>
+          <xsd:documentation>Сообщение о статусе </xsd:documentation>
+        </xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="250"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+
+
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

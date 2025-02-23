@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/common/v10/Types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:simpleType name="MessageState">
+		<xsd:annotation>
+      <xsd:documentation>состояние сообщения
+ON_DELIVERY - в процессе доставки
+DELIVERED - доставлено
+NOT_DELIVERED - не доставлено
+DELIVERY_STOPPED - доставка остановлена</xsd:documentation>
+    </xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ON_DELIVERY"/>
+			<xsd:enumeration value="DELIVERED"/>
+			<xsd:enumeration value="NOT_DELIVERED"/>
+			<xsd:enumeration value="DELIVERY_STOPPED"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

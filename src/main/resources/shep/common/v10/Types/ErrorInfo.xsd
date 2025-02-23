@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://bip.bee.kz/common/v10/Types" xmlns:bons1="http://bip.bee.kz/common/v10/Types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="Guid.xsd"/>
+    <xsd:complexType name="ErrorInfo">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="errorCode" type="xsd:string">
+				<xsd:annotation>
+          <xsd:documentation>Код ошибки</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="errorMessage" type="xsd:string">
+				<xsd:annotation>
+          <xsd:documentation>Сообщение ошибки</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="errorData" type="xsd:string">
+				<xsd:annotation>
+          <xsd:documentation>Дополнительное описание ошибки</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="errorDate" type="xsd:dateTime">
+				<xsd:annotation>
+          <xsd:documentation>Дата ошибки</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="subError" type="bons1:ErrorInfo">
+				<xsd:annotation>
+          <xsd:documentation>Дочерняя ошибка</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="sessionId" type="bons1:guid">
+				<xsd:annotation>
+          <xsd:documentation>Идентификатор сессии в которой произошла ошибка</xsd:documentation>
+        </xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
