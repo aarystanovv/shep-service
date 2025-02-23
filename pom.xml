@@ -13,6 +13,18 @@
             <groupId>org.apache.ws.security</groupId>
             <artifactId>wss4j</artifactId>
             <version>1.5.11</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/resources/libs/wss4j-1.5.11.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.santuario</groupId>
+            <artifactId>xmlsec</artifactId>
+            <version>1.5.8</version>
+        </dependency>
+        <dependency>
+            <groupId>xalan</groupId>
+            <artifactId>xalan</artifactId>
+            <version>2.7.1</version>
         </dependency>
         <dependency>
             <groupId>kz.gov.pki</groupId>
@@ -57,6 +69,43 @@
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-codegen-plugin</artifactId>
                 <version>3.0.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                        <version>1.1.1</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>javax.xml.bind</groupId>
+                        <artifactId>jaxb-api</artifactId>
+                        <version>2.3.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.glassfish.jaxb</groupId>
+                        <artifactId>jaxb-runtime</artifactId>
+                        <version>2.3.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.sun.xml.bind</groupId>
+                        <artifactId>jaxb-core</artifactId>
+                        <version>2.3.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.glassfish.jaxb</groupId>
+                        <artifactId>jaxb-xjc</artifactId>
+                        <version>2.3.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>javax.xml.ws</groupId>
+                        <artifactId>jaxws-api</artifactId>
+                        <version>2.3.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>javax.jws</groupId>
+                        <artifactId>javax.jws-api</artifactId>
+                        <version>1.1</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>generate-shep-async-channel</id>
@@ -64,9 +113,11 @@
                         <configuration>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>src/main/resources/shep/AsyncChannel/v10/Interfaces/AsyncChannelHttp_Service.wsdl
+                                    <wsdl>
+                                        src/main/resources/shep/AsyncChannel/v10/Interfaces/AsyncChannelHttp_Service.wsdl
                                     </wsdl>
-                                    <wsdlLocation>classpath:shep/AsyncChannel/v10/Interfaces/AsyncChannelHttp_Service.wsdl
+                                    <wsdlLocation>
+                                        classpath:shep/AsyncChannel/v10/Interfaces/AsyncChannelHttp_Service.wsdl
                                     </wsdlLocation>
                                     <extraargs>
                                         <extraarg>-p</extraarg>
@@ -85,7 +136,8 @@
                         <configuration>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/shep/SyncChannel/v10/Interfaces/SyncChannelHttp_Service.wsdl
+                                    <wsdl>
+                                        ${basedir}/src/main/resources/shep/SyncChannel/v10/Interfaces/SyncChannelHttp_Service.wsdl
                                     </wsdl>
                                     <wsdlLocation>classpath:shep/SyncChannel/v10/Interfaces/SyncChannelHttp_Service.wsdl
                                     </wsdlLocation>
